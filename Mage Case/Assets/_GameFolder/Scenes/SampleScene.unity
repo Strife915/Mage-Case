@@ -427,6 +427,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1379611275263263223, guid: 5c11d5c7fab5d480d9ffe4056eed96c1, type: 3}
+      propertyPath: _gameEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: eea6a0ffe68fb4a1eb2a88ea437ec204, type: 2}
     - target: {fileID: 3940332350223400461, guid: 5c11d5c7fab5d480d9ffe4056eed96c1, type: 3}
       propertyPath: m_Name
       value: GameCanvas
@@ -515,5 +519,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7088190813735242216, guid: 5c11d5c7fab5d480d9ffe4056eed96c1, type: 3}
+      propertyPath: _untiyEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7088190813735242216, guid: 5c11d5c7fab5d480d9ffe4056eed96c1, type: 3}
+      propertyPath: _untiyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7088190813735242216, guid: 5c11d5c7fab5d480d9ffe4056eed96c1, type: 3}
+      propertyPath: _untiyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8786813060884955463, guid: 5c11d5c7fab5d480d9ffe4056eed96c1, type: 3}
+      propertyPath: _gameEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: f71cdaf5a5067442d90f2e51853af9e0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c11d5c7fab5d480d9ffe4056eed96c1, type: 3}

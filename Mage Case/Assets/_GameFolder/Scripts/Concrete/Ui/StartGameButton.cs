@@ -1,18 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class StartGameButton : MonoBehaviour
+namespace Magecase.Uis
 {
-    // Start is called before the first frame update
-    void Start()
+    public class StartGameButton : ButtonWithGameEvent
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

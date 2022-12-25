@@ -114,13 +114,17 @@ GameObject:
   - component: {fileID: 4653117760934412695}
   - component: {fileID: 7204007574657256938}
   - component: {fileID: 2877509225458583606}
+  - component: {fileID: 231955620278567937}
+  - component: {fileID: 7522264856164759653}
+  - component: {fileID: 7845143801573214154}
+  - component: {fileID: 7591156314425127133}
   m_Layer: 5
   m_Name: LeaderBoard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4653117760934412695
 RectTransform:
   m_ObjectHideFlags: 0
@@ -136,10 +140,10 @@ RectTransform:
   m_Father: {fileID: 6584358317271350064}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1500, y: 3000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7204007574657256938
 CanvasRenderer:
@@ -179,6 +183,64 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &231955620278567937
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7636281307630989429}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
+--- !u!223 &7522264856164759653
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7636281307630989429}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!114 &7845143801573214154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7636281307630989429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5599b08c7b5c44618f96ceb22ec1c240, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7591156314425127133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7636281307630989429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beb56ec9fcd8a4c3b86802be05d688eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameEvent: {fileID: 11400000, guid: eea6a0ffe68fb4a1eb2a88ea437ec204, type: 2}
 --- !u!1001 &2243945851056234904
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -270,10 +332,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7409863054850302175, guid: aef4f494f59ad4b96a0ba012406a56d3, type: 3}
+      propertyPath: _gameEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: f71cdaf5a5067442d90f2e51853af9e0, type: 2}
     - target: {fileID: 8584579403345807465, guid: aef4f494f59ad4b96a0ba012406a56d3, type: 3}
       propertyPath: m_Name
       value: StartGameButton
       objectReference: {fileID: 0}
+    - target: {fileID: 9041635002546874480, guid: aef4f494f59ad4b96a0ba012406a56d3, type: 3}
+      propertyPath: _gameEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: f71cdaf5a5067442d90f2e51853af9e0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aef4f494f59ad4b96a0ba012406a56d3, type: 3}
 --- !u!224 &3686745912334887307 stripped
@@ -372,10 +442,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4418515444036248894, guid: 562b2a87cd46947689c9bb3b783eaeff, type: 3}
+      propertyPath: _gameEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: eea6a0ffe68fb4a1eb2a88ea437ec204, type: 2}
     - target: {fileID: 5094194617389205218, guid: 562b2a87cd46947689c9bb3b783eaeff, type: 3}
       propertyPath: m_Name
       value: LeaderBoardButton
       objectReference: {fileID: 0}
+    - target: {fileID: 5542503257994454779, guid: 562b2a87cd46947689c9bb3b783eaeff, type: 3}
+      propertyPath: _gameEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: eea6a0ffe68fb4a1eb2a88ea437ec204, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 562b2a87cd46947689c9bb3b783eaeff, type: 3}
 --- !u!224 &3740719137990074961 stripped

@@ -1,18 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class LeaderboardButton : MonoBehaviour
+namespace Magecase.Uis
 {
-    // Start is called before the first frame update
-    void Start()
+    public class LeaderboardButton : ButtonWithGameEvent
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

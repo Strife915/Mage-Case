@@ -99,8 +99,35 @@ PrefabInstance:
       propertyPath: m_Name
       value: StartGameButton
       objectReference: {fileID: 0}
+    - target: {fileID: 6819030279305087161, guid: 18c46c431254c445c877e55ee3798e09, type: 3}
+      propertyPath: _untiyEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6819030279305087161, guid: 18c46c431254c445c877e55ee3798e09, type: 3}
+      propertyPath: _untiyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6819030279305087161, guid: 18c46c431254c445c877e55ee3798e09, type: 3}
+      propertyPath: _untiyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8584579403345807465}
+    - target: {fileID: 6819030279305087161, guid: 18c46c431254c445c877e55ee3798e09, type: 3}
+      propertyPath: _untiyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18c46c431254c445c877e55ee3798e09, type: 3}
+--- !u!114 &152684224926042070 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2433678510444930847, guid: 18c46c431254c445c877e55ee3798e09, type: 3}
+  m_PrefabInstance: {fileID: 2582912003741294793}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8584579403345807465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8584579403345807465 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6123441611085473952, guid: 18c46c431254c445c877e55ee3798e09, type: 3}
@@ -118,3 +145,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b3140ba71f840b1a4a35fd3549c54f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _button: {fileID: 152684224926042070}
