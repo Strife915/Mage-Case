@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1625119593985919412}
   - component: {fileID: 6707879869715258630}
   - component: {fileID: 1698402758946206751}
-  - component: {fileID: 7695670949650596478}
   m_Layer: 5
   m_Name: SpinWheel
   m_TagString: Untagged
@@ -78,18 +77,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!225 &7695670949650596478
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5579620202957583733}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1001 &7803275681849946654
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -216,6 +216,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: GamePlayCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 2090605669864090303, guid: f88298704beb1463d9dd08d0d5b99acb, type: 3}
+      propertyPath: wheelSize
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 2090605669864090303, guid: f88298704beb1463d9dd08d0d5b99acb, type: 3}
+      propertyPath: spinDuration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2272270139366208787, guid: f88298704beb1463d9dd08d0d5b99acb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 2272270139366208787, guid: f88298704beb1463d9dd08d0d5b99acb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.85
+      objectReference: {fileID: 0}
     - target: {fileID: 8376690337381063802, guid: f88298704beb1463d9dd08d0d5b99acb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
