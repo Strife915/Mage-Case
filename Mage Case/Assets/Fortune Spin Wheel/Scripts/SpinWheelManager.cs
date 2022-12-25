@@ -5,10 +5,12 @@ using UnityEngine.UI;
 public class SpinWheelManager : MonoBehaviour
 {
     public List<SpinItem> items = new List<SpinItem>();
-    
+
     public Transform wheel;
+
     public Transform handle;
-    public Button startButton;
+
+    //public Button startButton;
     public ParticleSystem happyParticle;
     public AudioSource beepAudio;
     public AudioSource winAudio;
@@ -18,7 +20,7 @@ public class SpinWheelManager : MonoBehaviour
     public float spinSpeed = 400;
     public float minSpinSpeed = 40f;
     public int spinRounds = 7;
-    
+
     public GameObject autoGenerateParent;
     public Sprite circleSprite;
     public Sprite pinSprite;
@@ -37,7 +39,7 @@ public class SpinWheelManager : MonoBehaviour
     public bool generateItemsIcon = true;
     public float itemsIconPosition = 190;
     public float itemsIconSize = 45;
-    
+
     private bool isSpinning = false;
     private bool isSpinningFianl = false;
     private float itemDegree = 0;
@@ -48,7 +50,7 @@ public class SpinWheelManager : MonoBehaviour
     private float mFinalSpinSpeed;
 
     [HideInInspector] public int selectedItem;
-    
+
     public virtual void OnFinishedSpin()
     {
         Debug.Log("You have won, item : " + selectedItem + ((items[selectedItem].text.Length > 0) ? " ( " + items[selectedItem].text + " )" : ""));
@@ -84,9 +86,9 @@ public class SpinWheelManager : MonoBehaviour
 
             //    break;
         }
-        
+
         happyParticle.Play();
-        startButton.interactable = true;
+        //startButton.interactable = true;
         winAudio.Play();
     }
 
@@ -129,7 +131,7 @@ public class SpinWheelManager : MonoBehaviour
 
     public virtual void Start()
     {
-        itemDegree = (float) (360f / items.Count);
+        itemDegree = (float)(360f / items.Count);
     }
 
     public virtual void Update()
@@ -140,7 +142,8 @@ public class SpinWheelManager : MonoBehaviour
             float speed = spinSpeed;
 
             rotationSpin -= (speed * Time.deltaTime);
-            if (rotationSpin <= -360f) {
+            if (rotationSpin <= -360f)
+            {
                 rotationSpin += 360f;
                 mSpinCount++;
                 if (mSpinCount == spinRounds - 2)
@@ -151,11 +154,10 @@ public class SpinWheelManager : MonoBehaviour
                     isSpinningFianl = true;
                 }
             }
-            
+
             wheel.eulerAngles = new Vector3(0, 0, rotationSpin * direction);
 
             AdjustHandleRotation();
-
         }
         else if (isSpinningFianl) // 2 final rounds with decreasing speed 
         {
@@ -163,9 +165,9 @@ public class SpinWheelManager : MonoBehaviour
             float finalProgress = 720 - finalRotation;
             float speedMult = 1 - (currentProgress / finalProgress);
             mFinalSpinSpeed = ((spinSpeed - minSpinSpeed) * (speedMult)) + minSpinSpeed;
-            
+
             rotationSpin -= (mFinalSpinSpeed * Time.deltaTime);
-            if(mSpinCount < spinRounds)
+            if (mSpinCount < spinRounds)
             {
                 if (rotationSpin <= -360f)
                 {
@@ -181,7 +183,7 @@ public class SpinWheelManager : MonoBehaviour
                     OnFinishedSpin();
                 }
             }
-            
+
             wheel.eulerAngles = new Vector3(0, 0, rotationSpin * direction);
 
             if (handle)
@@ -195,7 +197,7 @@ public class SpinWheelManager : MonoBehaviour
     {
         float x = rotationSpin % (-itemDegree);
         x = (-x);
-        if (x > (itemDegree/2f))
+        if (x > (itemDegree / 2f))
         {
             x = (itemDegree / 2f);
             tickSFXPlayed = false;
@@ -217,7 +219,7 @@ public class SpinWheelManager : MonoBehaviour
             handle.eulerAngles = new Vector3(0, 0, (45f - ((x - (itemDegree / 4f)) / (itemDegree / 4f)) * 45f) * direction);
         }
     }
-    
+
     private void Spin()
     {
         if (items.Count < 3)
@@ -225,21 +227,21 @@ public class SpinWheelManager : MonoBehaviour
             Debug.LogError("Minimum Items Count Is 3.");
             return;
         }
-        
-        if(spinRounds < 3)
+
+        if (spinRounds < 3)
         {
             Debug.LogError("Minimum Spin Count Is 3.");
             return;
         }
-        
-        if(spinSpeed <= 0 || minSpinSpeed <= 0)
+
+        if (spinSpeed <= 0 || minSpinSpeed <= 0)
         {
             Debug.LogError("Negative speed or 0 value will not work.");
             return;
         }
 
 
-        startButton.interactable = false;
+        //startButton.interactable = false;
 
         wheel.eulerAngles = Vector3.zero;
         handle.eulerAngles = Vector3.zero;
@@ -248,14 +250,14 @@ public class SpinWheelManager : MonoBehaviour
         selectedItem = Random.Range(0, 1000);
 
         int allChances = 0;
-        for(int i = 0; i < items.Count; i++)
+        for (int i = 0; i < items.Count; i++)
         {
             allChances += items[i].chance;
         }
 
         float chancePart = 1000f / allChances;
         float checkedChances = 0f;
-        
+
         for (int i = 0; i < items.Count; i++)
         {
             checkedChances += chancePart * items[i].chance;
@@ -266,7 +268,7 @@ public class SpinWheelManager : MonoBehaviour
             }
         }
 
-        finalRotation = - (selectedItem * itemDegree) - (itemDegree / 2f);
+        finalRotation = -(selectedItem * itemDegree) - (itemDegree / 2f);
         tickSFXPlayed = false;
         isSpinningFianl = false;
         isSpinning = true;
@@ -285,19 +287,19 @@ public class SpinWheelManager : MonoBehaviour
 
         bool allChancesZero = true;
 
-        for(int i = 0; i < items.Count; i++)
+        for (int i = 0; i < items.Count; i++)
         {
-            if(items[i].chance < 0)
+            if (items[i].chance < 0)
             {
                 Debug.LogError("Items chance can't be negative.");
                 return;
             }
-            else if(items[i].chance > 0)
+            else if (items[i].chance > 0)
             {
                 allChancesZero = false;
             }
 
-            if(!randomColor && items[i].color.a == 0)
+            if (!randomColor && items[i].color.a == 0)
             {
                 items[i].color.a = 1;
             }
@@ -333,7 +335,7 @@ public class SpinWheelManager : MonoBehaviour
             slice.GetComponent<Image>().sprite = circleSprite;
             slice.GetComponent<Image>().type = Image.Type.Filled;
             slice.GetComponent<Image>().fillAmount = 1f / items.Count;
-            slice.GetComponent<Image>().fillOrigin = (int) Image.Origin360.Top;
+            slice.GetComponent<Image>().fillOrigin = (int)Image.Origin360.Top;
             SetRectSize(slice.GetComponent<RectTransform>(), 470, 470);
             slice.transform.eulerAngles = new Vector3(0, 0, (i + 1) * itemDegree);
             if (randomColor)
@@ -346,7 +348,7 @@ public class SpinWheelManager : MonoBehaviour
             }
         }
 
-        if(hasItemSpace)
+        if (hasItemSpace)
         {
             GameObject spaces = new GameObject("spaces");
             spaces.transform.SetParent(autoGenerateParent.transform);
@@ -440,7 +442,7 @@ public class SpinWheelManager : MonoBehaviour
                     image.AddComponent<Image>();
                     SetRectSize(image.GetComponent<RectTransform>(), itemsIconSize, itemsIconSize);
                     image.GetComponent<Image>().preserveAspect = true;
-                    if(items[i].icon)
+                    if (items[i].icon)
                         image.GetComponent<Image>().sprite = items[i].icon;
                     else
                         image.GetComponent<Image>().sprite = circleSprite;
@@ -463,12 +465,12 @@ public class SpinWheelManager : MonoBehaviour
 
     public void TestAddRandomSlice()
     {
-        AddSlice("test" + Random.Range(0, 1000), (items.Count > 0)? items[Random.Range(0, items.Count)].icon : null, 1, new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f)));
+        AddSlice("test" + Random.Range(0, 1000), (items.Count > 0) ? items[Random.Range(0, items.Count)].icon : null, 1, new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f)));
     }
 
     public void TestRemoveLastSlice()
     {
-        if(items.Count > 0)
+        if (items.Count > 0)
         {
             RemoveSlice(items.Count - 1);
         }
