@@ -100,6 +100,10 @@ PrefabInstance:
       value: StartGameButton
       objectReference: {fileID: 0}
     - target: {fileID: 6819030279305087161, guid: 18c46c431254c445c877e55ee3798e09, type: 3}
+      propertyPath: _gameEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: f71cdaf5a5067442d90f2e51853af9e0, type: 2}
+    - target: {fileID: 6819030279305087161, guid: 18c46c431254c445c877e55ee3798e09, type: 3}
       propertyPath: _untiyEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -110,10 +114,22 @@ PrefabInstance:
     - target: {fileID: 6819030279305087161, guid: 18c46c431254c445c877e55ee3798e09, type: 3}
       propertyPath: _untiyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 8584579403345807465}
+      objectReference: {fileID: 7409863054850302175}
     - target: {fileID: 6819030279305087161, guid: 18c46c431254c445c877e55ee3798e09, type: 3}
       propertyPath: _untiyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6819030279305087161, guid: 18c46c431254c445c877e55ee3798e09, type: 3}
+      propertyPath: _untiyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 6819030279305087161, guid: 18c46c431254c445c877e55ee3798e09, type: 3}
+      propertyPath: _untiyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Magecase.Uis.StartGameButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6819030279305087161, guid: 18c46c431254c445c877e55ee3798e09, type: 3}
+      propertyPath: _untiyEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18c46c431254c445c877e55ee3798e09, type: 3}
@@ -146,3 +162,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _button: {fileID: 152684224926042070}
+  _gameEvent: {fileID: 0}
+  _canvasGroup: {fileID: 0}
