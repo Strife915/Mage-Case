@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 463206b9f331d4d6592d42cc6245e8fe, type: 3}
-  m_Name: Api Url Data Container
+  m_Name: LeaderboardApiUrl
   m_EditorClassIdentifier: 
   _apiUrl:
   - https://magegamessite.web.app/case0/leaderboard_page_0.json

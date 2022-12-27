@@ -1,27 +1,21 @@
-﻿using System;
-using System.Threading;
-using Magecase.Abstract.Backend;
+﻿using System.Threading;
 using MageCase.Scriptableobjects;
 using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.Networking;
 
-namespace Magecase.Backend
+namespace Magecase.Abstract.Backend
 {
-    public class ApiCall : IApiCall
+    public abstract class BasseApiCallClass
     {
-        ApiUrlDataContainer _leaderBoardUrl;
-        ApiUrlDataContainer _questionUrl;
+        protected ApiUrlDataContainer _urlDataContainer;
 
-        public void GetLeaderboard(int pageCount)
+        public BasseApiCallClass(ApiUrlDataContainer apiUrlDataContainer)
         {
+            _urlDataContainer = apiUrlDataContainer;
         }
 
-        public void GetQuestions()
-        {
-        }
-
-        T GetApiCall<T>(ApiUrlDataContainer urlDataContainer, int index)
+        protected T GetApiCall<T>(ApiUrlDataContainer urlDataContainer, int index)
         {
             var url = urlDataContainer.GetUrlByIndex(index);
             if (string.IsNullOrEmpty(url))

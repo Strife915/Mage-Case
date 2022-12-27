@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace MageCase.Scriptableobjects
@@ -7,6 +6,7 @@ namespace MageCase.Scriptableobjects
     public class ApiUrlDataContainer : ScriptableObject
     {
         [SerializeField] string[] _apiUrl;
+        public int PageLength => _apiUrl.Length;
 
         public string GetUrlByIndex(int index)
         {
