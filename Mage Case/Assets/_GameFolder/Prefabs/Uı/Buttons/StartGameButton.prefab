@@ -162,5 +162,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _button: {fileID: 152684224926042070}
-  _gameEvent: {fileID: 0}
+  _gameEvent: {fileID: 11400000, guid: f71cdaf5a5067442d90f2e51853af9e0, type: 2}
   _canvasGroup: {fileID: 0}
