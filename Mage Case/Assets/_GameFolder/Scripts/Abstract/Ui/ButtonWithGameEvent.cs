@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Magecase.Uis
 {
-    public class ButtonWithGameEvent : BaseButton
+    public abstract class ButtonWithGameEvent : BaseButton
     {
         [SerializeField] GameEvent _gameEvent;
 
