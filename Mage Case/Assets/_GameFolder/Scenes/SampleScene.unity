@@ -193,7 +193,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -465,6 +465,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1393611765}
     m_Modifications:
+    - target: {fileID: 812528546778640395, guid: e1072874c7dfaf948bd2e7f1f09f680e, type: 3}
+      propertyPath: m_fontSize
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 812528546778640395, guid: e1072874c7dfaf948bd2e7f1f09f680e, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 2735627102426469271, guid: e1072874c7dfaf948bd2e7f1f09f680e, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -553,10 +561,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ResultCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 6411463560634018977, guid: e1072874c7dfaf948bd2e7f1f09f680e, type: 3}
-      propertyPath: _gameEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: f71cdaf5a5067442d90f2e51853af9e0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1072874c7dfaf948bd2e7f1f09f680e, type: 3}
 --- !u!224 &723775871 stripped
@@ -796,22 +800,6 @@ PrefabInstance:
     - target: {fileID: 484851977271410135, guid: d416376903a4f406abbde2e9ced3a920, type: 3}
       propertyPath: m_Name
       value: Spin Wheel 8 Slice $
-      objectReference: {fileID: 0}
-    - target: {fileID: 484851977271410136, guid: d416376903a4f406abbde2e9ced3a920, type: 3}
-      propertyPath: items.Array.data[0].icon
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 484851977271410136, guid: d416376903a4f406abbde2e9ced3a920, type: 3}
-      propertyPath: items.Array.data[1].icon
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 484851977271410136, guid: d416376903a4f406abbde2e9ced3a920, type: 3}
-      propertyPath: items.Array.data[2].icon
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 484851977271410136, guid: d416376903a4f406abbde2e9ced3a920, type: 3}
-      propertyPath: items.Array.data[3].icon
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 484851977271410137, guid: d416376903a4f406abbde2e9ced3a920, type: 3}
       propertyPath: m_RootOrder

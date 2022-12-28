@@ -93,11 +93,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2524738440953951010, guid: 18c46c431254c445c877e55ee3798e09, type: 3}
       propertyPath: m_fontSize
-      value: 75
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2524738440953951010, guid: 18c46c431254c445c877e55ee3798e09, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2524738440953951010, guid: 18c46c431254c445c877e55ee3798e09, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2524738440953951010, guid: 18c46c431254c445c877e55ee3798e09, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2524738440953951010, guid: 18c46c431254c445c877e55ee3798e09, type: 3}
       propertyPath: m_fontSizeBase
-      value: 75
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2524738440953951010, guid: 18c46c431254c445c877e55ee3798e09, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
       objectReference: {fileID: 0}
     - target: {fileID: 6123441611085473952, guid: 18c46c431254c445c877e55ee3798e09, type: 3}
       propertyPath: m_Name
@@ -134,8 +150,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _button: {fileID: 4469650754883405610}
-  _gameEvent: {fileID: 0}
+  _gameEvent: {fileID: 11400000, guid: f71cdaf5a5067442d90f2e51853af9e0, type: 2}
   _answerClickEvent: {fileID: 8499866378320504227}
+  _alternativeMainMenuButtonEvent: {fileID: 11400000, guid: 47badd532d485324586e80a2d18ed3bc, type: 2}
 --- !u!114 &8499866378320504227
 MonoBehaviour:
   m_ObjectHideFlags: 0

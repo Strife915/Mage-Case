@@ -75,8 +75,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -230,14 +230,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ResultCanvasButton
       objectReference: {fileID: 0}
-    - target: {fileID: 8031132475274006461, guid: 0cbd01d18467d9948b53c5b0e5468482, type: 3}
-      propertyPath: _gameEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: f71cdaf5a5067442d90f2e51853af9e0, type: 2}
-    - target: {fileID: 8031132475274006461, guid: 0cbd01d18467d9948b53c5b0e5468482, type: 3}
-      propertyPath: _alternativeMainMenuButtonEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: 47badd532d485324586e80a2d18ed3bc, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cbd01d18467d9948b53c5b0e5468482, type: 3}
 --- !u!1001 &5362592715009331002

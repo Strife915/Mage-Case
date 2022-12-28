@@ -93,15 +93,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2524738440953951010, guid: 18c46c431254c445c877e55ee3798e09, type: 3}
       propertyPath: m_text
-      value: leader board
-      objectReference: {fileID: 0}
-    - target: {fileID: 2524738440953951010, guid: 18c46c431254c445c877e55ee3798e09, type: 3}
-      propertyPath: m_fontSize
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 2524738440953951010, guid: 18c46c431254c445c877e55ee3798e09, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 80
+      value: Leader board
       objectReference: {fileID: 0}
     - target: {fileID: 6123441611085473952, guid: 18c46c431254c445c877e55ee3798e09, type: 3}
       propertyPath: m_Name
