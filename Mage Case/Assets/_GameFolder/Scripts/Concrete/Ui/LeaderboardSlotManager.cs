@@ -15,6 +15,7 @@ namespace Magecase.Uis
         [SerializeField] Button _prevButton, _nextButton;
         [SerializeField] TMP_Text _pageText;
         ILeaderboardApiCall _leaderboardApiCall;
+
         INumberLimitor _numberLimitor;
         int _currentPageNumber = 0;
         bool _isLastPage => _currentPageNumber == _apiUrlDataContainer.PageLength - 1;

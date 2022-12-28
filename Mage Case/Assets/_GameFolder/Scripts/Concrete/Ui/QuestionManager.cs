@@ -11,12 +11,14 @@ namespace Magecase.Uis
     public class QuestionManager : MonoBehaviour
     {
         [SerializeField] ApiUrlDataContainer _urlDataContainer;
-        IQuestionApiCall _questionApiCall;
         [SerializeField] SpinWheelManager _spinWheelManager;
-        List<QuestionDataEntities> _questions;
         [SerializeField] TMP_Text _questionText;
+        [SerializeField] AnswerButton[] _answerButtons;
 
 
+        List<QuestionDataEntities> _questions;
+        QuestionDataEntities _currentQuestion;
+        IQuestionApiCall _questionApiCall;
         int _listCount;
         Dictionary<string, List<QuestionDataEntities>> _questionDictionary = new();
 
@@ -39,12 +41,26 @@ namespace Magecase.Uis
 
         QuestionDataEntities GetQuestion(string key)
         {
-            return _questionDictionary[key][Random.Range(0, _questionDictionary[key].Count)];
+            _currentQuestion = _questionDictionary[key][Random.Range(0, _questionDictionary[key].Count)];
+            var models = new AnswerSlotModel[_answerButtons.Length];
+            for (var i = 0; i < models.Length; i++)
+            {
+                //var model = new AnswerSlotModel();
+                models[i].AnswerText = _currentQuestion.Choices[i];
+                _answerButtons[i].Bind(models[i]);
+            }
+
+            return _currentQuestion;
         }
 
         public void UpdateText()
         {
             _questionText.text = GetQuestion(_spinWheelManager.Key).Question;
+        }
+
+        void UpdateAnswerTexts(AnswerSlotModel slotModel)
+        {
+            foreach (var answerButton in _answerButtons) answerButton.Bind(slotModel);
         }
     }
 }
