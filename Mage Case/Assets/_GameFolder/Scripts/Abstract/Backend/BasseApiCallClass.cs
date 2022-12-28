@@ -15,7 +15,7 @@ namespace Magecase.Abstract.Backend
             _urlDataContainer = apiUrlDataContainer;
         }
 
-        protected T GetApiCall<T>(ApiUrlDataContainer urlDataContainer, int index)
+        protected T GetApiCall<T>(ApiUrlDataContainer urlDataContainer, int index = 0)
         {
             var url = urlDataContainer.GetUrlByIndex(index);
             if (string.IsNullOrEmpty(url))
