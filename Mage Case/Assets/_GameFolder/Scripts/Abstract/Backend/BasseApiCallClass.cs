@@ -19,11 +19,8 @@ namespace Magecase.Abstract.Backend
         {
             var url = urlDataContainer.GetUrlByIndex(index);
             if (string.IsNullOrEmpty(url))
-            {
                 Debug.Log("url is empty");
-            }
             else
-            {
                 using (var webRequest = UnityWebRequest.Get(url))
                 {
                     webRequest.SendWebRequest();
@@ -44,10 +41,6 @@ namespace Magecase.Abstract.Backend
                             Debug.LogError("Api call failed and throw exception");
                         }
                 }
-
-                {
-                }
-            }
 
             return default;
         }

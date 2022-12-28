@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: LeaderboardApiUrl
   m_EditorClassIdentifier: 
   _apiUrl:
-  - https://magegamessite.web.app/case0/leaderboard_page_0.json
+  - https://magegamessite.web.app/case1/leaderboard_page_0.json
   - https://magegamessite.web.app/case1/leaderboard_page_1.json
