@@ -2,7 +2,8 @@
     "name": "MageCase.Scripts",
     "rootNamespace": "",
     "references": [
-        "GUID:6055be8ebefd69e48b49212b09b47b2f"
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:391c919b49b1b9049a9d4d183d0df804"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

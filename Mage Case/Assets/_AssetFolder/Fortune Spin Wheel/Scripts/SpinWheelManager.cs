@@ -7,9 +7,7 @@ public class SpinWheelManager : MonoBehaviour
     public List<SpinItem> items = new();
 
     public Transform wheel;
-
     public Transform handle;
-
     public Button startButton;
     public ParticleSystem happyParticle;
     public AudioSource beepAudio;
@@ -39,6 +37,7 @@ public class SpinWheelManager : MonoBehaviour
     public bool generateItemsIcon = true;
     public float itemsIconPosition = 190;
     public float itemsIconSize = 45;
+    public string Key { get; private set; }
 
     bool isSpinning = false;
     bool isSpinningFianl = false;
@@ -54,22 +53,21 @@ public class SpinWheelManager : MonoBehaviour
     public virtual void OnFinishedSpin()
     {
         Debug.Log("You have won, item : " + selectedItem + (items[selectedItem].text.Length > 0 ? " ( " + items[selectedItem].text + " )" : ""));
-        startButton.interactable = true;
 
         // Here give player the prize.
         switch (selectedItem)
         {
             case 0:
-
+                Key = "history";
                 break;
             case 1:
-
+                Key = "cinema";
                 break;
             case 2:
-
+                Key = "general-culture";
                 break;
             case 3:
-
+                Key = "music";
                 break;
             case 4:
 
@@ -89,17 +87,13 @@ public class SpinWheelManager : MonoBehaviour
         }
 
         happyParticle.Play();
-        //startButton.interactable = true;
+        startButton.interactable = true;
         winAudio.Play();
     }
 
     public virtual void OnSpinButtonClick()
     {
-        if (!IsWheelSpinning())
-        {
-            startButton.interactable = false;
-            Spin();
-        }
+        if (!IsWheelSpinning()) Spin();
     }
 
     public bool IsWheelSpinning()
@@ -240,7 +234,7 @@ public class SpinWheelManager : MonoBehaviour
         }
 
 
-        //startButton.interactable = false;
+        startButton.interactable = false;
 
         wheel.eulerAngles = Vector3.zero;
         handle.eulerAngles = Vector3.zero;

@@ -2,7 +2,7 @@
 
 namespace Magecase.DataEntities
 {
-    public class QuestionEntityData
+    public struct QuestionEntityData
     {
         public List<QuestionDataEntities> Questions { get; set; }
     }
