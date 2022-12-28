@@ -1,5 +1,4 @@
-﻿using Magecase.Abstract.Behaviours;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
 namespace MageCase.GamePlay
