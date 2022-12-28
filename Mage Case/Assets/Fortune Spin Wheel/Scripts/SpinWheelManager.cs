@@ -4,13 +4,13 @@ using UnityEngine.UI;
 
 public class SpinWheelManager : MonoBehaviour
 {
-    public List<SpinItem> items = new List<SpinItem>();
+    public List<SpinItem> items = new();
 
     public Transform wheel;
 
     public Transform handle;
 
-    //public Button startButton;
+    public Button startButton;
     public ParticleSystem happyParticle;
     public AudioSource beepAudio;
     public AudioSource winAudio;
@@ -40,20 +40,21 @@ public class SpinWheelManager : MonoBehaviour
     public float itemsIconPosition = 190;
     public float itemsIconSize = 45;
 
-    private bool isSpinning = false;
-    private bool isSpinningFianl = false;
-    private float itemDegree = 0;
-    private int mSpinCount = 0;
-    private float rotationSpin = 0;
-    private bool tickSFXPlayed = false;
-    private float finalRotation;
-    private float mFinalSpinSpeed;
+    bool isSpinning = false;
+    bool isSpinningFianl = false;
+    float itemDegree = 0;
+    int mSpinCount = 0;
+    float rotationSpin = 0;
+    bool tickSFXPlayed = false;
+    float finalRotation;
+    float mFinalSpinSpeed;
 
     [HideInInspector] public int selectedItem;
 
     public virtual void OnFinishedSpin()
     {
-        Debug.Log("You have won, item : " + selectedItem + ((items[selectedItem].text.Length > 0) ? " ( " + items[selectedItem].text + " )" : ""));
+        Debug.Log("You have won, item : " + selectedItem + (items[selectedItem].text.Length > 0 ? " ( " + items[selectedItem].text + " )" : ""));
+        startButton.interactable = true;
 
         // Here give player the prize.
         switch (selectedItem)
@@ -96,6 +97,7 @@ public class SpinWheelManager : MonoBehaviour
     {
         if (!IsWheelSpinning())
         {
+            startButton.interactable = false;
             Spin();
         }
     }
@@ -108,7 +110,7 @@ public class SpinWheelManager : MonoBehaviour
 
     public void AddSlice(string text, Sprite icon, int chance, Color color)
     {
-        SpinItem item = new SpinItem();
+        var item = new SpinItem();
         item.text = text;
         item.icon = icon;
         item.chance = chance;
@@ -136,12 +138,12 @@ public class SpinWheelManager : MonoBehaviour
 
     public virtual void Update()
     {
-        int direction = (reverseWheelRotation) ? -1 : 1;
+        var direction = reverseWheelRotation ? -1 : 1;
         if (isSpinning) // Normal spinning with linear speed
         {
-            float speed = spinSpeed;
+            var speed = spinSpeed;
 
-            rotationSpin -= (speed * Time.deltaTime);
+            rotationSpin -= speed * Time.deltaTime;
             if (rotationSpin <= -360f)
             {
                 rotationSpin += 360f;
@@ -161,12 +163,12 @@ public class SpinWheelManager : MonoBehaviour
         }
         else if (isSpinningFianl) // 2 final rounds with decreasing speed 
         {
-            float currentProgress = ((2 - (spinRounds - mSpinCount)) * 360) - rotationSpin;
-            float finalProgress = 720 - finalRotation;
-            float speedMult = 1 - (currentProgress / finalProgress);
-            mFinalSpinSpeed = ((spinSpeed - minSpinSpeed) * (speedMult)) + minSpinSpeed;
+            var currentProgress = (2 - (spinRounds - mSpinCount)) * 360 - rotationSpin;
+            var finalProgress = 720 - finalRotation;
+            var speedMult = 1 - currentProgress / finalProgress;
+            mFinalSpinSpeed = (spinSpeed - minSpinSpeed) * speedMult + minSpinSpeed;
 
-            rotationSpin -= (mFinalSpinSpeed * Time.deltaTime);
+            rotationSpin -= mFinalSpinSpeed * Time.deltaTime;
             if (mSpinCount < spinRounds)
             {
                 if (rotationSpin <= -360f)
@@ -186,28 +188,25 @@ public class SpinWheelManager : MonoBehaviour
 
             wheel.eulerAngles = new Vector3(0, 0, rotationSpin * direction);
 
-            if (handle)
-            {
-                AdjustHandleRotation();
-            }
+            if (handle) AdjustHandleRotation();
         }
     }
 
-    private void AdjustHandleRotation()
+    void AdjustHandleRotation()
     {
-        float x = rotationSpin % (-itemDegree);
-        x = (-x);
-        if (x > (itemDegree / 2f))
+        var x = rotationSpin % -itemDegree;
+        x = -x;
+        if (x > itemDegree / 2f)
         {
-            x = (itemDegree / 2f);
+            x = itemDegree / 2f;
             tickSFXPlayed = false;
         }
 
-        int direction = (reverseHandleRotation) ? -1 : 1;
+        var direction = reverseHandleRotation ? -1 : 1;
 
-        if (x <= (itemDegree / 4f))
+        if (x <= itemDegree / 4f)
         {
-            handle.eulerAngles = new Vector3(0, 0, (x / (itemDegree / 4f)) * 45f * direction);
+            handle.eulerAngles = new Vector3(0, 0, x / (itemDegree / 4f) * 45f * direction);
             if (!tickSFXPlayed)
             {
                 beepAudio.Play();
@@ -216,11 +215,11 @@ public class SpinWheelManager : MonoBehaviour
         }
         else
         {
-            handle.eulerAngles = new Vector3(0, 0, (45f - ((x - (itemDegree / 4f)) / (itemDegree / 4f)) * 45f) * direction);
+            handle.eulerAngles = new Vector3(0, 0, (45f - (x - itemDegree / 4f) / (itemDegree / 4f) * 45f) * direction);
         }
     }
 
-    private void Spin()
+    void Spin()
     {
         if (items.Count < 3)
         {
@@ -249,16 +248,13 @@ public class SpinWheelManager : MonoBehaviour
         rotationSpin = 0;
         selectedItem = Random.Range(0, 1000);
 
-        int allChances = 0;
-        for (int i = 0; i < items.Count; i++)
-        {
-            allChances += items[i].chance;
-        }
+        var allChances = 0;
+        for (var i = 0; i < items.Count; i++) allChances += items[i].chance;
 
-        float chancePart = 1000f / allChances;
-        float checkedChances = 0f;
+        var chancePart = 1000f / allChances;
+        var checkedChances = 0f;
 
-        for (int i = 0; i < items.Count; i++)
+        for (var i = 0; i < items.Count; i++)
         {
             checkedChances += chancePart * items[i].chance;
             if (selectedItem < checkedChances)
@@ -268,7 +264,7 @@ public class SpinWheelManager : MonoBehaviour
             }
         }
 
-        finalRotation = -(selectedItem * itemDegree) - (itemDegree / 2f);
+        finalRotation = -(selectedItem * itemDegree) - itemDegree / 2f;
         tickSFXPlayed = false;
         isSpinningFianl = false;
         isSpinning = true;
@@ -285,9 +281,9 @@ public class SpinWheelManager : MonoBehaviour
             return;
         }
 
-        bool allChancesZero = true;
+        var allChancesZero = true;
 
-        for (int i = 0; i < items.Count; i++)
+        for (var i = 0; i < items.Count; i++)
         {
             if (items[i].chance < 0)
             {
@@ -299,35 +295,25 @@ public class SpinWheelManager : MonoBehaviour
                 allChancesZero = false;
             }
 
-            if (!randomColor && items[i].color.a == 0)
-            {
-                items[i].color.a = 1;
-            }
+            if (!randomColor && items[i].color.a == 0) items[i].color.a = 1;
         }
 
         if (allChancesZero)
-        {
-            for (int i = 0; i < items.Count; i++)
-            {
+            for (var i = 0; i < items.Count; i++)
                 items[i].chance = 1;
-            }
-        }
 
-        for (int i = autoGenerateParent.transform.childCount - 1; i >= 0; i--)
-        {
-            DestroyImmediate(autoGenerateParent.transform.GetChild(i).gameObject);
-        }
+        for (var i = autoGenerateParent.transform.childCount - 1; i >= 0; i--) DestroyImmediate(autoGenerateParent.transform.GetChild(i).gameObject);
 
         itemDegree = (float)(360f / items.Count);
 
-        GameObject slices = new GameObject("slices");
+        var slices = new GameObject("slices");
         slices.transform.SetParent(autoGenerateParent.transform);
         slices.transform.localScale = Vector3.one;
         slices.transform.localPosition = Vector3.zero;
 
-        for (int i = 0; i < items.Count; i++)
+        for (var i = 0; i < items.Count; i++)
         {
-            GameObject slice = new GameObject("slice " + i);
+            var slice = new GameObject("slice " + i);
             slice.transform.SetParent(slices.transform);
             slice.transform.localScale = Vector3.one;
             slice.transform.localPosition = Vector3.zero;
@@ -339,25 +325,21 @@ public class SpinWheelManager : MonoBehaviour
             SetRectSize(slice.GetComponent<RectTransform>(), 470, 470);
             slice.transform.eulerAngles = new Vector3(0, 0, (i + 1) * itemDegree);
             if (randomColor)
-            {
                 slice.GetComponent<Image>().color = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
-            }
             else
-            {
                 slice.GetComponent<Image>().color = items[i].color;
-            }
         }
 
         if (hasItemSpace)
         {
-            GameObject spaces = new GameObject("spaces");
+            var spaces = new GameObject("spaces");
             spaces.transform.SetParent(autoGenerateParent.transform);
             spaces.transform.localScale = Vector3.one;
             spaces.transform.localPosition = Vector3.zero;
 
-            for (int i = 0; i < items.Count; i++)
+            for (var i = 0; i < items.Count; i++)
             {
-                GameObject space = new GameObject("space " + i);
+                var space = new GameObject("space " + i);
                 space.transform.SetParent(spaces.transform);
                 space.transform.localScale = Vector3.one;
                 space.transform.localPosition = Vector3.zero;
@@ -369,19 +351,19 @@ public class SpinWheelManager : MonoBehaviour
             }
         }
 
-        GameObject pins = new GameObject("pins");
+        var pins = new GameObject("pins");
         pins.transform.SetParent(autoGenerateParent.transform);
         pins.transform.localScale = Vector3.one;
         pins.transform.localPosition = Vector3.zero;
 
-        for (int i = 0; i < items.Count; i++)
+        for (var i = 0; i < items.Count; i++)
         {
-            GameObject pin = new GameObject("pin " + i);
+            var pin = new GameObject("pin " + i);
             pin.transform.SetParent(pins.transform);
             pin.transform.localScale = Vector3.one;
             pin.transform.localPosition = Vector3.zero;
 
-            GameObject image = new GameObject("image");
+            var image = new GameObject("image");
             image.transform.SetParent(pin.transform);
             image.transform.localScale = Vector3.one;
             image.transform.localPosition = Vector3.zero;
@@ -395,21 +377,21 @@ public class SpinWheelManager : MonoBehaviour
 
         if (generateItemsContent)
         {
-            GameObject texts = new GameObject("items");
+            var texts = new GameObject("items");
             texts.transform.SetParent(autoGenerateParent.transform);
             texts.transform.localScale = Vector3.one;
             texts.transform.localPosition = Vector3.zero;
 
-            for (int i = 0; i < items.Count; i++)
+            for (var i = 0; i < items.Count; i++)
             {
-                GameObject item = new GameObject("item " + i);
+                var item = new GameObject("item " + i);
                 item.transform.SetParent(texts.transform);
                 item.transform.localScale = Vector3.one;
                 item.transform.localPosition = Vector3.zero;
 
                 if (generateItemsText)
                 {
-                    GameObject text = new GameObject("item text " + i);
+                    var text = new GameObject("item text " + i);
                     text.transform.SetParent(item.transform);
                     text.transform.localScale = Vector3.one;
                     text.transform.localPosition = Vector3.zero;
@@ -436,7 +418,7 @@ public class SpinWheelManager : MonoBehaviour
 
                 if (generateItemsIcon)
                 {
-                    GameObject image = new GameObject("item icon " + i);
+                    var image = new GameObject("item icon " + i);
                     image.transform.SetParent(item.transform);
                     image.transform.localScale = Vector3.one;
                     image.AddComponent<Image>();
@@ -449,31 +431,28 @@ public class SpinWheelManager : MonoBehaviour
                     image.transform.localPosition = new Vector3(itemsIconPosition, 0, 0);
                 }
 
-                item.transform.eulerAngles = new Vector3(0, 0, (90 - itemDegree) + (itemDegree / 2) + ((i + 1) * itemDegree));
+                item.transform.eulerAngles = new Vector3(0, 0, 90 - itemDegree + itemDegree / 2 + (i + 1) * itemDegree);
             }
         }
     }
 
-    private void SetRectSize(RectTransform rect, float newWidth, float newHeight)
+    void SetRectSize(RectTransform rect, float newWidth, float newHeight)
     {
-        Vector2 newSize = new Vector2(newWidth, newHeight);
-        Vector2 oldSize = rect.rect.size;
-        Vector2 deltaSize = newSize - oldSize;
+        var newSize = new Vector2(newWidth, newHeight);
+        var oldSize = rect.rect.size;
+        var deltaSize = newSize - oldSize;
         rect.offsetMin = rect.offsetMin - new Vector2(deltaSize.x * rect.pivot.x, deltaSize.y * rect.pivot.y);
         rect.offsetMax = rect.offsetMax + new Vector2(deltaSize.x * (1f - rect.pivot.x), deltaSize.y * (1f - rect.pivot.y));
     }
 
     public void TestAddRandomSlice()
     {
-        AddSlice("test" + Random.Range(0, 1000), (items.Count > 0) ? items[Random.Range(0, items.Count)].icon : null, 1, new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f)));
+        AddSlice("test" + Random.Range(0, 1000), items.Count > 0 ? items[Random.Range(0, items.Count)].icon : null, 1, new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f)));
     }
 
     public void TestRemoveLastSlice()
     {
-        if (items.Count > 0)
-        {
-            RemoveSlice(items.Count - 1);
-        }
+        if (items.Count > 0) RemoveSlice(items.Count - 1);
     }
 
     [System.Serializable]
