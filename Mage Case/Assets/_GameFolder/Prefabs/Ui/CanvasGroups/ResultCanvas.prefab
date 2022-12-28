@@ -231,6 +231,10 @@ PrefabInstance:
       value: ResultCanvasButton
       objectReference: {fileID: 0}
     - target: {fileID: 8031132475274006461, guid: 0cbd01d18467d9948b53c5b0e5468482, type: 3}
+      propertyPath: _gameEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: f71cdaf5a5067442d90f2e51853af9e0, type: 2}
+    - target: {fileID: 8031132475274006461, guid: 0cbd01d18467d9948b53c5b0e5468482, type: 3}
       propertyPath: _alternativeMainMenuButtonEvent
       value: 
       objectReference: {fileID: 11400000, guid: 47badd532d485324586e80a2d18ed3bc, type: 2}
@@ -390,33 +394,6 @@ MonoBehaviour:
   _untiyEventObject:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1426017387409439865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2735627102426469291}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: beb56ec9fcd8a4c3b86802be05d688eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _gameEvent: {fileID: 11400000, guid: 7929925ce40eb4f41a0601b28ff18d2b, type: 2}
---- !u!114 &8271958395625987397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2735627102426469291}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27c451ca252f43888d57628c5a85419b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  resultcanvasMessageSo: {fileID: 11400000, guid: 91c30ba84cb6cd54db0255149ebc8118, type: 2}
-  _answerClickEventListener: {fileID: 1426017387409439865}
 --- !u!114 &2111464006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -448,3 +425,61 @@ MonoBehaviour:
   _untiyEventObject:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1426017387409439865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2735627102426469291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beb56ec9fcd8a4c3b86802be05d688eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameEvent: {fileID: 11400000, guid: 7929925ce40eb4f41a0601b28ff18d2b, type: 2}
+--- !u!114 &4439038346706043464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2735627102426469291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d8b08748a3343d7834a850f4e0d208, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameEvent: {fileID: 11400000, guid: f71cdaf5a5067442d90f2e51853af9e0, type: 2}
+  _untiyEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8271958395625987397}
+        m_TargetAssemblyTypeName: Magecase.Abstract.Uis.BaseCanvasGroup, MageCase.Scripts
+        m_MethodName: CloseCanvas
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _untiyEventObject:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &8271958395625987397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2735627102426469291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27c451ca252f43888d57628c5a85419b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resultcanvasMessageSo: {fileID: 11400000, guid: 91c30ba84cb6cd54db0255149ebc8118, type: 2}
+  _answerClickEventListener: {fileID: 1426017387409439865}

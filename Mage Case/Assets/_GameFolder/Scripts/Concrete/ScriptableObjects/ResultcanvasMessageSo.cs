@@ -7,8 +7,10 @@ namespace MageCase.Scriptableobjects
     {
         [SerializeField] string _canvasSuccessMessage;
         [SerializeField] string _canvasFailMessage;
+        [SerializeField] string _timeUpMessage;
 
         public string CanvasSuccessMessage => _canvasSuccessMessage;
         public string CanvasFailMessage => _canvasFailMessage;
+        public string TimeUpMessage => _timeUpMessage;
     }
 }
