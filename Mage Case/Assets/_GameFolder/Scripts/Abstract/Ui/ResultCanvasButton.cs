@@ -30,14 +30,15 @@ namespace Magecase.Uis
             var answer = context as AnswerButton;
             if (answer == null) return;
             if (answer.IsCorrectAnswer)
-            {
                 _buttonText.text = "Next Question";
-            }
             else
-            {
-                _gameEvent = _alternativeMainMenuButtonEvent;
-                _buttonText.text = "Main Menu";
-            }
+                UpdateButtonEventToAlternative();
+        }
+
+        public void UpdateButtonEventToAlternative()
+        {
+            _gameEvent = _alternativeMainMenuButtonEvent;
+            _buttonText.text = "Main Menu";
         }
 
         protected override void OnDisable()

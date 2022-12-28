@@ -33,6 +33,11 @@ namespace Magecase.Uis
                 _messageText.text = resultcanvasMessageSo.CanvasFailMessage;
         }
 
+        public void HandleMessageOnTimesUp()
+        {
+            _messageText.text = resultcanvasMessageSo.TimeUpMessage;
+        }
+
         void OnValidate()
         {
             GetReference();

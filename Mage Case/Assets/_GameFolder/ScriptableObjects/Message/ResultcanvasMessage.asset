@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66890b3bda1f4f48bc701a2728de210e, type: 3}
   m_Name: ResultcanvasMessage
   m_EditorClassIdentifier: 
-  _canvasSuccessMessage: Correct You can go for next question
-  _canvasFailMessage: Fail
+  _canvasSuccessMessage: Perfect You Can Go For Next Question
+  _canvasFailMessage: Game Over
+  _timeUpMessage: Be faster next time
