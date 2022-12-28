@@ -13,7 +13,8 @@ namespace MageCase.GamePlay
     {
         [SerializeField] QuestionAttributes _questionAttributes;
         [SerializeField] NormalGameEventListener _answerEventListener;
-        [SerializeField] TMP_Text _timeCountText, _scoreText;
+        [SerializeField] TMP_Text _timeCountText;
+        [SerializeField] TMP_Text[] _scoreTexts;
         [SerializeField] GameEvent _timeIsUpEvent;
         [SerializeField] GameEvent _showingResultEvent;
 
@@ -32,7 +33,7 @@ namespace MageCase.GamePlay
 
         void Awake()
         {
-            _score = new PlayerScore(_scoreText);
+            _score = new PlayerScore(_scoreTexts);
             _statemachine = new MyStatemachine();
             _gameplayOnHoldState = new GameplayOnHoldState();
             _gameOnPlayState = new GameOnPlayState(_timeCountText, _questionAttributes, _timeIsUpEvent);

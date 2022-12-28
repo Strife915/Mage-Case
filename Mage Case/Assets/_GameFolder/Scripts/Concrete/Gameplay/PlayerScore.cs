@@ -5,10 +5,10 @@ namespace MageCase.GamePlay
 {
     public class PlayerScore
     {
-        TMP_Text _scoreText;
+        TMP_Text[] _scoreText;
         public int Score { get; set; }
 
-        public PlayerScore(TMP_Text scoreText)
+        public PlayerScore(TMP_Text[] scoreText)
         {
             _scoreText = scoreText;
             UpdateScoreText(Score);
@@ -18,7 +18,7 @@ namespace MageCase.GamePlay
         {
             Score += value;
             Score = Mathf.Max(Score, 0);
-            _scoreText.text = "SCORE : " + Score.ToString();
+            foreach (var text in _scoreText) text.text = "SCORE : " + Score.ToString();
         }
     }
 }
