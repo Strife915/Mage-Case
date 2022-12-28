@@ -62,6 +62,11 @@ namespace MageCase.GamePlay
             _statemachine.ChangeState(_gameOnPlayState);
         }
 
+        public void ChangeGamePlayToOnHoldState()
+        {
+            _statemachine.ChangeState(_gameplayOnHoldState);
+        }
+
         void StartShowResultRoutine()
         {
             _switchToResultCoroutine = StartCoroutine(SwitchToResultCanvasRoutine());
@@ -70,7 +75,7 @@ namespace MageCase.GamePlay
         IEnumerator SwitchToResultCanvasRoutine()
         {
             _statemachine.ChangeState(_gamePlayShowResultState);
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(2.5f);
             _showingResultEvent.InvokeEvents();
         }
 

@@ -15,4 +15,4 @@ MonoBehaviour:
   _correctAnswerPoint: 20
   _unCorrectAnswerPoint: -10
   _timeLapsePoint: -3
-  _giveAnswerTime: 5
+  _giveAnswerTime: 20

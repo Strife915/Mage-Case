@@ -360,14 +360,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 1393611765}
     m_Modifications:
     - target: {fileID: 1295814271, guid: b5055d49576d44e27a3adc849a71eb3a, type: 3}
-      propertyPath: _scoreTexts.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1295814271, guid: b5055d49576d44e27a3adc849a71eb3a, type: 3}
-      propertyPath: _scoreTexts.Array.data[0]
-      value: 
-      objectReference: {fileID: 1571593110}
-    - target: {fileID: 1295814271, guid: b5055d49576d44e27a3adc849a71eb3a, type: 3}
       propertyPath: _scoreTexts.Array.data[1]
       value: 
       objectReference: {fileID: 2815753604302156238}
@@ -798,17 +790,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1571593110 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1307730141942174983, guid: b5055d49576d44e27a3adc849a71eb3a, type: 3}
-  m_PrefabInstance: {fileID: 642251329}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1870005037 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 484851977271410136, guid: d416376903a4f406abbde2e9ced3a920, type: 3}
