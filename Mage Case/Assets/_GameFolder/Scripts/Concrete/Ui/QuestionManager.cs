@@ -47,7 +47,6 @@ namespace Magecase.Uis
             {
                 models[i].AnswerText = _currentQuestion.Choices[i];
                 models[i].IsCorrectAnswer = models[i].AnswerText.StartsWith(_currentQuestion.Answer);
-                Debug.Log(models[i].IsCorrectAnswer);
                 _answerButtons[i].Bind(models[i]);
             }
 

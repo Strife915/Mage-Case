@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9225bd58951e45958809e670fed0ef8f, type: 3}
-  m_Name: Question Attributes
+  m_Script: {fileID: 11500000, guid: 66890b3bda1f4f48bc701a2728de210e, type: 3}
+  m_Name: ResultcanvasMessage
   m_EditorClassIdentifier: 
-  _correctAnswerPoint: 20
-  _unCorrectAnswerPoint: -10
-  _timeLapsePoint: -3
-  _giveAnswerTime: 20
+  _canvasSuccessMessage: Correct You can go for next question
+  _canvasFailMessage: Fail

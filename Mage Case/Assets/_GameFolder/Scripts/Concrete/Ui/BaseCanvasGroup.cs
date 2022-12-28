@@ -9,9 +9,9 @@ namespace Magecase.Abstract.Uis
         ICanvasGroupOpenBehaviour _canvasGroupOpenBehaviour;
         ICanvasGroupCloseBehaviour _canvasGroupCloseBehaviour;
 
-        void Awake()
+        public virtual void Awake()
         {
-            CanvasGroup canvasGroup = GetComponent<CanvasGroup>();
+            var canvasGroup = GetComponent<CanvasGroup>();
             _canvasGroupOpenBehaviour = new CanvasGroupOpenBehaviour(canvasGroup);
             _canvasGroupCloseBehaviour = new CanvasGroupCloseBehaviour(canvasGroup);
         }

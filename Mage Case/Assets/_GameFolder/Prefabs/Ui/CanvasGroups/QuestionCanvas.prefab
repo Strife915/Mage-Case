@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1295814270}
   - component: {fileID: 1295814271}
   - component: {fileID: 1295814272}
+  - component: {fileID: 1295814273}
   m_Layer: 5
   m_Name: GamePlayManager
   m_TagString: Untagged
@@ -51,8 +52,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _questionAttributes: {fileID: 11400000, guid: 7984bd1badb3444df9603d4af335671b, type: 2}
+  _answerEventListener: {fileID: 1295814273}
   _timeCountText: {fileID: 7612867144359021654}
+  _scoreText: {fileID: 1307730141942174983}
   _timeIsUpEvent: {fileID: 11400000, guid: 37065859357af4f4e8270aa0d3a8116a, type: 2}
+  _showingResultEvent: {fileID: 11400000, guid: 77887def4306b774aa2d4118281f3905, type: 2}
 --- !u!114 &1295814272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,6 +88,19 @@ MonoBehaviour:
   _untiyEventObject:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1295814273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295814269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beb56ec9fcd8a4c3b86802be05d688eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameEvent: {fileID: 11400000, guid: 7929925ce40eb4f41a0601b28ff18d2b, type: 2}
 --- !u!1 &106402066500979446
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,7 +342,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'score : 20'
+  m_text: score
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1229,6 +1246,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e7e8507b0e8428ab000efd9527895e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &642251340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3941573567913742089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d8b08748a3343d7834a850f4e0d208, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameEvent: {fileID: 11400000, guid: 77887def4306b774aa2d4118281f3905, type: 2}
+  _untiyEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4221725650702435259}
+        m_TargetAssemblyTypeName: Magecase.Abstract.Uis.BaseCanvasGroup, MageCase.Scripts
+        m_MethodName: CloseCanvas
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _untiyEventObject:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!224 &3941573567913742133 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8042628431822003373, guid: 190aa527841a74ad4a30d72304d9e796, type: 3}

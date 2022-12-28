@@ -9,6 +9,8 @@ namespace Magecase.Uis
         [SerializeField] TMP_Text _answerText;
         [SerializeField] bool _isCorrectAnswer;
 
+        public bool IsCorrectAnswer => _isCorrectAnswer;
+
         protected override void HandleOnButtonClicked()
         {
             _gameEvent.InvokeEventsWithObject(this);
