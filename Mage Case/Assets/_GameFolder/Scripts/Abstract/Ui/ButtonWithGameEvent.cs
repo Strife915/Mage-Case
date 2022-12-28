@@ -6,7 +6,7 @@ namespace Magecase.Uis
 {
     public abstract class ButtonWithGameEvent : BaseButton
     {
-        [SerializeField] GameEvent _gameEvent;
+        [SerializeField] protected GameEvent _gameEvent;
 
         protected override void HandleOnButtonClicked()
         {

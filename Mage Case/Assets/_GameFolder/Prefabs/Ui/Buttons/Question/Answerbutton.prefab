@@ -271,5 +271,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _button: {fileID: 4861857602500193766}
-  _gameEvent: {fileID: 0}
-  _answerText: {fileID: 0}
+  _gameEvent: {fileID: 11400000, guid: 7929925ce40eb4f41a0601b28ff18d2b, type: 2}
+  _answerText: {fileID: 8313391254514632406}
+  _isCorrectAnswer: 0

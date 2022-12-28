@@ -39,14 +39,15 @@ namespace Magecase.Uis
                     _questionDictionary[_questions[i].Category].Add(_questions[i]);
         }
 
-        QuestionDataEntities GetQuestion(string key)
+        QuestionDataEntities GetQuestionWithAnswers(string key)
         {
             _currentQuestion = _questionDictionary[key][Random.Range(0, _questionDictionary[key].Count)];
             var models = new AnswerSlotModel[_answerButtons.Length];
             for (var i = 0; i < models.Length; i++)
             {
-                //var model = new AnswerSlotModel();
                 models[i].AnswerText = _currentQuestion.Choices[i];
+                models[i].IsCorrectAnswer = models[i].AnswerText.StartsWith(_currentQuestion.Answer);
+                Debug.Log(models[i].IsCorrectAnswer);
                 _answerButtons[i].Bind(models[i]);
             }
 
@@ -55,7 +56,7 @@ namespace Magecase.Uis
 
         public void UpdateText()
         {
-            _questionText.text = GetQuestion(_spinWheelManager.Key).Question;
+            _questionText.text = GetQuestionWithAnswers(_spinWheelManager.Key).Question;
         }
 
         void UpdateAnswerTexts(AnswerSlotModel slotModel)
