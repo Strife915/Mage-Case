@@ -1,9 +1,10 @@
-﻿using Magecase.DataEntities;
+﻿using System.Collections.Generic;
+using Magecase.DataEntities;
 
 namespace Magecase.Backend
 {
     public interface IQuestionApiCall
     {
-        QuestionDataEntities GetLeaderQuestions();
+        List<QuestionDataEntities> GetQuestions();
     }
 }
