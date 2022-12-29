@@ -1,6 +1,7 @@
 using MageCase.Abstract.Backend;
 using MageCase.Abstract.Behaviours;
 using MageCase.Backend;
+using MageCase.Behaviours;
 using MageCase.Scriptableobjects;
 using TMPro;
 using UnityEngine;

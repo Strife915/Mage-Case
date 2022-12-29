@@ -1,5 +1,5 @@
 using DG.Tweening;
-using MageCase.Abstract.Behaviours;
+using MageCase.Abstract.Attributes;
 using MageCase.Abstract.Ui.Behaviours;
 using MageCase.Scriptableobjects;
 using UnityEngine;

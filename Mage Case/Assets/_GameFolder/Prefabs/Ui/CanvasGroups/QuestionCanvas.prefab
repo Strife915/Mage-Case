@@ -821,7 +821,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2945348920057299902, guid: fab392e2c8c63494c97898b9112e4651, type: 3}
       propertyPath: m_text
-      value: Reveal
+      value: '%50'
       objectReference: {fileID: 0}
     - target: {fileID: 3967816895898972711, guid: fab392e2c8c63494c97898b9112e4651, type: 3}
       propertyPath: m_Pivot.x

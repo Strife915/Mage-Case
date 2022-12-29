@@ -1,4 +1,4 @@
-namespace MageCase.Abstract.Behaviours
+namespace MageCase.Abstract.Attributes
 {
     public interface IShakeAttributes
     {

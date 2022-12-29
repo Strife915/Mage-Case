@@ -1,4 +1,4 @@
-﻿namespace MageCase.GamePlay
+﻿namespace MageCase.GamePlay.States
 {
     public class State
     {

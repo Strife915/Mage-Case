@@ -1,4 +1,4 @@
-using MageCase.Abstract.Behaviours;
+using MageCase.Abstract.Attributes;
 using UnityEngine;
 
 namespace MageCase.Scriptableobjects

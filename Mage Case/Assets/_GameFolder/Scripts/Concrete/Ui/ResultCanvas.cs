@@ -1,5 +1,5 @@
 ﻿using MageCase.Abstract.Uis;
-using MageCase.Scriptableobjects;
+using MageCase.ScriptableObjects;
 using MageCase.ScriptableObjects.GameEventListeners;
 using TMPro;
 using UnityEngine;

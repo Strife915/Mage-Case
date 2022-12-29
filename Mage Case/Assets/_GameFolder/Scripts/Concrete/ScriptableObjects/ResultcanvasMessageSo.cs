@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace MageCase.Scriptableobjects
+namespace MageCase.ScriptableObjects
 {
     [CreateAssetMenu(menuName = "Mage Case/Message/Result Canvas Message", fileName = "Resultcanva sMessage")]
     public class ResultcanvasMessageSo : ScriptableObject
