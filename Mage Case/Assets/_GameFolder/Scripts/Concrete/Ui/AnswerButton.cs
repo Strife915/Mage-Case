@@ -1,5 +1,4 @@
-﻿using DG.Tweening;
-using Magecase.Abstract.Ui.Behaviours;
+﻿using Magecase.Abstract.Ui.Behaviours;
 using Magecase.DataEntities;
 using MageCase.Scriptableobjects;
 using TMPro;
@@ -20,13 +19,17 @@ namespace Magecase.Uis
 
         protected override void HandleOnButtonClicked()
         {
-            _gameEvent.InvokeEventsWithObject(this);
-            if (_isCorrectAnswer)
-                _buttonImage.color = Color.green;
-            else
             {
-                _buttonImage.color = Color.red;
-                _shakeBehaviour.Shake();
+                _gameEvent.InvokeEventsWithObject(this);
+                if (_isCorrectAnswer)
+                {
+                    _buttonImage.color = Color.green;
+                }
+                else
+                {
+                    _buttonImage.color = Color.red;
+                    _shakeBehaviour.Shake();
+                }
             }
         }
 
@@ -41,6 +44,11 @@ namespace Magecase.Uis
             base.Awake();
             _shakeBehaviour = new ShakeBehaviour(transform, _shakeAttributesSo);
             GetReference();
+        }
+
+        void UpdateTwoAnswerActieve()
+        {
+            _isCorrectAnswer = true;
         }
 
         protected override void GetReference()
@@ -68,6 +76,13 @@ namespace Magecase.Uis
         {
             _answerText.text = slotModel.AnswerText;
             _isCorrectAnswer = slotModel.IsCorrectAnswer;
+        }
+
+        public void RevealOnPowerUp()
+        {
+            _button.interactable = false;
+            _buttonImage.color = Color.red;
+            _shakeBehaviour.Shake();
         }
     }
 }

@@ -19,25 +19,36 @@ namespace Magecase.Uis
         List<QuestionDataEntities> _questions;
         QuestionDataEntities _currentQuestion;
         IQuestionApiCall _questionApiCall;
+        IPowerupAbility _revealWrongAnswersPowerUp;
         int _listCount;
         Dictionary<string, List<QuestionDataEntities>> _questionDictionary = new();
 
 
         void Awake()
         {
-            //To Do refact
-            var categories = new List<string>();
+            _revealWrongAnswersPowerUp = new RevealTwoWrongAnswerPowerUp(_answerButtons);
             _questionApiCall = new QuestionApiCall(_urlDataContainer);
+            GenerateListAccordingCategories();
+            AddQuestionsToListAccordingCategories();
+        }
+
+        void GenerateListAccordingCategories()
+        {
+            var categories = new List<string>();
             _questions = _questionApiCall.GetQuestions();
             for (var i = 0; i < _questions.Count; i++) categories.Add(_questions[i].Category);
             categories = categories.Distinct().ToList();
             _listCount = categories.Count;
             for (var i = 0; i < _listCount; i++) _questionDictionary.Add(categories[i], new List<QuestionDataEntities>());
+        }
 
+        void AddQuestionsToListAccordingCategories()
+        {
             for (var i = 0; i < _questions.Count; i++)
                 if (_questionDictionary.ContainsKey(_questions[i].Category))
                     _questionDictionary[_questions[i].Category].Add(_questions[i]);
         }
+
 
         QuestionDataEntities GetQuestionWithAnswers(string key)
         {
@@ -58,9 +69,9 @@ namespace Magecase.Uis
             _questionText.text = GetQuestionWithAnswers(_spinWheelManager.Key).Question;
         }
 
-        void UpdateAnswerTexts(AnswerSlotModel slotModel)
+        public void RevealTwoWrongAnswerPowerUp()
         {
-            foreach (var answerButton in _answerButtons) answerButton.Bind(slotModel);
+            _revealWrongAnswersPowerUp.PowerUp();
         }
     }
 }

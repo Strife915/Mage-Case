@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3042417340985790044}
   - component: {fileID: 3042417340985790045}
   - component: {fileID: 1174153789348413569}
+  - component: {fileID: 2782264147184358367}
   m_Layer: 5
   m_Name: GamePlayManager
   m_TagString: Untagged
@@ -124,6 +125,37 @@ MonoBehaviour:
       - m_Target: {fileID: 3042417340985790115}
         m_TargetAssemblyTypeName: MageCase.GamePlay.GameplayManager, MageCase.Scripts
         m_MethodName: ChangeGamePlayToOnHoldState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _untiyEventObject:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2782264147184358367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3042417340985790113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d8b08748a3343d7834a850f4e0d208, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameEvent: {fileID: 11400000, guid: 52263ec2cef174537ac3af8714c9c11b, type: 2}
+  _untiyEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3042417340985790115}
+        m_TargetAssemblyTypeName: MageCase.GamePlay.GameplayManager, MageCase.Scripts
+        m_MethodName: ExtraTimePowerUp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

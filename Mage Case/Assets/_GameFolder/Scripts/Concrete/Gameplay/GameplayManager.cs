@@ -51,9 +51,16 @@ namespace MageCase.GamePlay
             var answer = context as AnswerButton;
             if (answer == null) return;
             if (answer.IsCorrectAnswer)
-                _score.UpdateScoreText(_questionAttributes.CorrectAnswerPoint);
+            {
+                _score.UpdateScore(_questionAttributes.CorrectAnswerPoint);
+                _score.UpdateScoreText();
+            }
             else
-                _score.UpdateScoreText(_questionAttributes.UnCorrectAnswerPoint);
+            {
+                _score.UpdateScore(_questionAttributes.UnCorrectAnswerPoint);
+                _score.UpdateScoreText();
+            }
+
             StartShowResultRoutine();
         }
 
@@ -79,6 +86,12 @@ namespace MageCase.GamePlay
             yield return new WaitForSeconds(2.5f);
             _showingResultEvent.InvokeEvents();
         }
+
+        public void ExtraTimePowerUp()
+        {
+            _gameOnPlayState.IncreaseTimePowerUp();
+        }
+
 
         void OnDisable()
         {

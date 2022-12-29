@@ -1,5 +1,6 @@
 ﻿using Magecase.ScriptableObjects;
 using MageCase.Scriptableobjects;
+using Magecase.Uis;
 using TMPro;
 using UnityEngine;
 
@@ -11,13 +12,21 @@ namespace MageCase.GamePlay.States
         GameEvent _timeIsUpEvent;
         TMP_Text _gameTimeCountText;
         float _elapsedTime;
+        IPowerAbilityWithEvent _extraTimePowerUp;
 
         public GameOnPlayState(TMP_Text tmpText, QuestionAttributes questionAttributes, GameEvent timeIsUpEvent)
         {
             _gameTimeCountText = tmpText;
             _questionAttributes = questionAttributes;
             _elapsedTime = questionAttributes.GiveAnswerTime;
+            _extraTimePowerUp = new ExtraTimePowerUp();
             _timeIsUpEvent = timeIsUpEvent;
+            _extraTimePowerUp.PowerUpAction += IncreaseTime;
+        }
+
+        void IncreaseTime()
+        {
+            _elapsedTime += 10;
         }
 
         public override void Enter()
@@ -41,7 +50,12 @@ namespace MageCase.GamePlay.States
 
         void UpdateCounterText()
         {
-            _gameTimeCountText.text = _elapsedTime.ToString("00");
+            _gameTimeCountText.text = _elapsedTime.ToString("0");
+        }
+
+        public void IncreaseTimePowerUp()
+        {
+            _extraTimePowerUp.PowerUp();
         }
     }
 }
