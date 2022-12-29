@@ -24,6 +24,12 @@ namespace MageCase.GamePlay.States
             _extraTimePowerUp.PowerUpAction += IncreaseTime;
         }
 
+        ~GameOnPlayState()
+        {
+            _extraTimePowerUp.PowerUpAction -= IncreaseTime;
+        }
+
+
         void IncreaseTime()
         {
             _elapsedTime += 10;
