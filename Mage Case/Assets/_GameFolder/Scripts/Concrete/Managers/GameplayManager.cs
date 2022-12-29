@@ -6,12 +6,15 @@ using Magecase.ScriptableObjects.GameEventListeners;
 using Magecase.Uis;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace MageCase.GamePlay
 {
     public class GameplayManager : MonoBehaviour
     {
-        [SerializeField] QuestionAttributes _questionAttributes;
+        [FormerlySerializedAs("_questionAttributes")] [SerializeField]
+        QuestionAttributesSo questionAttributesSo;
+
         [SerializeField] NormalGameEventListener _answerEventListener;
         [SerializeField] TMP_Text _timeCountText;
         [SerializeField] TMP_Text[] _scoreTexts;
@@ -36,7 +39,7 @@ namespace MageCase.GamePlay
             _score = new PlayerScore(_scoreTexts);
             _statemachine = new MyStatemachine();
             _gameplayOnHoldState = new GameplayOnHoldState();
-            _gameOnPlayState = new GameOnPlayState(_timeCountText, _questionAttributes, _timeIsUpEvent);
+            _gameOnPlayState = new GameOnPlayState(_timeCountText, questionAttributesSo, _timeIsUpEvent);
             _gamePlayShowResultState = new GamePlayShowResultState();
             _statemachine.InitiliazeState(_gameplayOnHoldState);
         }
@@ -52,12 +55,12 @@ namespace MageCase.GamePlay
             if (answer == null) return;
             if (answer.IsCorrectAnswer)
             {
-                _score.UpdateScore(_questionAttributes.CorrectAnswerPoint);
+                _score.UpdateScore(questionAttributesSo.CorrectAnswerPoint);
                 _score.UpdateScoreText();
             }
             else
             {
-                _score.UpdateScore(_questionAttributes.UnCorrectAnswerPoint);
+                _score.UpdateScore(questionAttributesSo.UnCorrectAnswerPoint);
                 _score.UpdateScoreText();
             }
 

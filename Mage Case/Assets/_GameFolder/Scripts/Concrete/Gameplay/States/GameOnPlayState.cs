@@ -8,17 +8,17 @@ namespace MageCase.GamePlay.States
 {
     public class GameOnPlayState : State
     {
-        QuestionAttributes _questionAttributes;
+        QuestionAttributesSo _questionAttributesSo;
         GameEvent _timeIsUpEvent;
         TMP_Text _gameTimeCountText;
         float _elapsedTime;
         IPowerAbilityWithEvent _extraTimePowerUp;
 
-        public GameOnPlayState(TMP_Text tmpText, QuestionAttributes questionAttributes, GameEvent timeIsUpEvent)
+        public GameOnPlayState(TMP_Text tmpText, QuestionAttributesSo questionAttributesSo, GameEvent timeIsUpEvent)
         {
             _gameTimeCountText = tmpText;
-            _questionAttributes = questionAttributes;
-            _elapsedTime = questionAttributes.GiveAnswerTime;
+            _questionAttributesSo = questionAttributesSo;
+            _elapsedTime = questionAttributesSo.GiveAnswerTime;
             _extraTimePowerUp = new ExtraTimePowerUp();
             _timeIsUpEvent = timeIsUpEvent;
             _extraTimePowerUp.PowerUpAction += IncreaseTime;
@@ -31,7 +31,7 @@ namespace MageCase.GamePlay.States
 
         public override void Enter()
         {
-            _elapsedTime = _questionAttributes.GiveAnswerTime;
+            _elapsedTime = _questionAttributesSo.GiveAnswerTime;
         }
 
         public override void Tick()

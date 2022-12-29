@@ -4,13 +4,16 @@ using Magecase.Backend;
 using MageCase.Scriptableobjects;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Magecase.Uis
 {
     public class LeaderboardSlotManager : MonoBehaviour
     {
-        [SerializeField] ApiUrlDataContainer _apiUrlDataContainer;
+        [FormerlySerializedAs("_apiUrlDataContainer")] [SerializeField]
+        ApiUrlDataContainerSo apiUrlDataContainerSo;
+
         [SerializeField] LeaderboardSlotController[] _leaderboardSlotControllers;
         [SerializeField] Button _prevButton, _nextButton;
         [SerializeField] TMP_Text _pageText;
@@ -18,13 +21,13 @@ namespace Magecase.Uis
 
         INumberLimitor _numberLimitor;
         int _currentPageNumber = 0;
-        bool _isLastPage => _currentPageNumber == _apiUrlDataContainer.PageLength - 1;
+        bool _isLastPage => _currentPageNumber == apiUrlDataContainerSo.PageLength - 1;
         bool _isFirstPage => _currentPageNumber == 0;
 
         void Awake()
         {
             _numberLimitor = new NumberLimitor();
-            _leaderboardApiCall = new LeaderboardApiCall(_apiUrlDataContainer);
+            _leaderboardApiCall = new LeaderboardApiCall(apiUrlDataContainerSo);
             UpdateButtons();
             UpdatePageText(_currentPageNumber + 1);
             GetLeaderBoard(_currentPageNumber);
@@ -40,7 +43,7 @@ namespace Magecase.Uis
         public void GetNextPage()
         {
             _currentPageNumber++;
-            _numberLimitor.LimitValue(_currentPageNumber, _apiUrlDataContainer.PageLength);
+            _numberLimitor.LimitValue(_currentPageNumber, apiUrlDataContainerSo.PageLength);
             UpdateButtons();
             GetLeaderBoard(_currentPageNumber);
         }
@@ -48,7 +51,7 @@ namespace Magecase.Uis
         public void GetPreviousPage()
         {
             _currentPageNumber--;
-            _numberLimitor.LimitValue(_currentPageNumber, _apiUrlDataContainer.PageLength);
+            _numberLimitor.LimitValue(_currentPageNumber, apiUrlDataContainerSo.PageLength);
             UpdateButtons();
             GetLeaderBoard(_currentPageNumber);
         }

@@ -5,12 +5,15 @@ using Magecase.DataEntities;
 using MageCase.Scriptableobjects;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Magecase.Uis
 {
     public class QuestionManager : MonoBehaviour
     {
-        [SerializeField] ApiUrlDataContainer _urlDataContainer;
+        [FormerlySerializedAs("_urlDataContainer")] [SerializeField]
+        ApiUrlDataContainerSo urlDataContainerSo;
+
         [SerializeField] SpinWheelManager _spinWheelManager;
         [SerializeField] TMP_Text _questionText;
         [SerializeField] AnswerButton[] _answerButtons;
@@ -27,7 +30,7 @@ namespace Magecase.Uis
         void Awake()
         {
             _revealWrongAnswersPowerUp = new RevealTwoWrongAnswerPowerUp(_answerButtons);
-            _questionApiCall = new QuestionApiCall(_urlDataContainer);
+            _questionApiCall = new QuestionApiCall(urlDataContainerSo);
             GenerateListAccordingCategories();
             AddQuestionsToListAccordingCategories();
         }

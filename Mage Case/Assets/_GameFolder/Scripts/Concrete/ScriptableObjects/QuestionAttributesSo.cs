@@ -3,7 +3,7 @@ using UnityEngine;
 namespace MageCase.Scriptableobjects
 {
     [CreateAssetMenu(menuName = "Mage Case/Attributes/Question", fileName = "Question Attributes")]
-    public class QuestionAttributes : ScriptableObject
+    public class QuestionAttributesSo : ScriptableObject
     {
         [SerializeField] int _correctAnswerPoint;
         [SerializeField] int _unCorrectAnswerPoint;

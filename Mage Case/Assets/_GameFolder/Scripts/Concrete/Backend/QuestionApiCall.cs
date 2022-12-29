@@ -10,11 +10,11 @@ namespace Magecase.Backend
     {
         public List<QuestionDataEntities> GetQuestions()
         {
-            var result = GetApiCall<QuestionEntityData>(_urlDataContainer);
+            var result = GetApiCall<QuestionEntityData>(UrlDataContainerSo);
             return result.Questions.ToList();
         }
 
-        public QuestionApiCall(ApiUrlDataContainer apiUrlDataContainer) : base(apiUrlDataContainer)
+        public QuestionApiCall(ApiUrlDataContainerSo apiUrlDataContainerSo) : base(apiUrlDataContainerSo)
         {
         }
     }

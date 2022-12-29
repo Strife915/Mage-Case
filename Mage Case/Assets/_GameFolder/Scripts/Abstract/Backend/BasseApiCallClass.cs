@@ -8,16 +8,16 @@ namespace Magecase.Abstract.Backend
 {
     public abstract class BasseApiCallClass
     {
-        protected ApiUrlDataContainer _urlDataContainer;
+        protected ApiUrlDataContainerSo UrlDataContainerSo;
 
-        public BasseApiCallClass(ApiUrlDataContainer apiUrlDataContainer)
+        public BasseApiCallClass(ApiUrlDataContainerSo apiUrlDataContainerSo)
         {
-            _urlDataContainer = apiUrlDataContainer;
+            UrlDataContainerSo = apiUrlDataContainerSo;
         }
 
-        protected T GetApiCall<T>(ApiUrlDataContainer urlDataContainer, int index = 0)
+        protected T GetApiCall<T>(ApiUrlDataContainerSo urlDataContainerSo, int index = 0)
         {
-            var url = urlDataContainer.GetUrlByIndex(index);
+            var url = urlDataContainerSo.GetUrlByIndex(index);
             if (string.IsNullOrEmpty(url))
                 Debug.Log("url is empty");
             else

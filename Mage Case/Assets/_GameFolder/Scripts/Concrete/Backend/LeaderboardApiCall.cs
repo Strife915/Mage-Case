@@ -8,11 +8,11 @@ namespace Magecase.Backend
     {
         public LeaderBoardDataEntities GetLeaderboard(int pageCount)
         {
-            var result = GetApiCall<LeaderBoardDataEntities>(_urlDataContainer, pageCount);
+            var result = GetApiCall<LeaderBoardDataEntities>(UrlDataContainerSo, pageCount);
             return result;
         }
 
-        public LeaderboardApiCall(ApiUrlDataContainer apiUrlDataContainer) : base(apiUrlDataContainer)
+        public LeaderboardApiCall(ApiUrlDataContainerSo apiUrlDataContainerSo) : base(apiUrlDataContainerSo)
         {
         }
     }
