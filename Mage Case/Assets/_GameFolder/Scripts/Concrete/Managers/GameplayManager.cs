@@ -94,6 +94,12 @@ namespace MageCase.GamePlay
             _gameOnPlayState.IncreaseTimePowerUp();
         }
 
+        public void UpdateScoreOnTimesUp()
+        {
+            _score.UpdateScore(questionAttributesSo.TimeLapsePoint);
+            _score.UpdateScoreText();
+        }
+
 
         void OnDisable()
         {
