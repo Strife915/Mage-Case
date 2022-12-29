@@ -52,7 +52,7 @@ public class SpinWheelManager : MonoBehaviour
 
     public virtual void OnFinishedSpin()
     {
-        Debug.Log("You have won, item : " + selectedItem + (items[selectedItem].text.Length > 0 ? " ( " + items[selectedItem].text + " )" : ""));
+//        Debug.Log("You have won, item : " + selectedItem + (items[selectedItem].text.Length > 0 ? " ( " + items[selectedItem].text + " )" : ""));
 
         // Here give player the prize.
         switch (selectedItem)
