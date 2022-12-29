@@ -11,19 +11,25 @@ namespace MageCase.GamePlay
         public PlayerScore(TMP_Text[] scoreText)
         {
             _scoreText = scoreText;
-            UpdateScoreText(Score);
+            UpdateScore(Score);
+            UpdateScoreText();
         }
 
-        public void UpdateScoreText(int value)
+        public void UpdateScore(int value)
         {
             Score += value;
             Score = Mathf.Max(Score, 0);
+        }
+
+        public void UpdateScoreText()
+        {
             foreach (var text in _scoreText) text.text = "SCORE : " + Score.ToString();
         }
 
         public void ResetScore()
         {
-            UpdateScoreText(0);
+            Score = 0;
+            UpdateScoreText();
         }
     }
 }
