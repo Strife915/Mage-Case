@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7697804507436663939, guid: c325c0dbc4144494ea155d587229240d, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7697804507436663939, guid: c325c0dbc4144494ea155d587229240d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300066, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
     - target: {fileID: 7697804507436663949, guid: c325c0dbc4144494ea155d587229240d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -37,11 +45,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7697804507436663949, guid: c325c0dbc4144494ea155d587229240d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 160
+      value: 72
       objectReference: {fileID: 0}
     - target: {fileID: 7697804507436663949, guid: c325c0dbc4144494ea155d587229240d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 118.01524
+      objectReference: {fileID: 0}
+    - target: {fileID: 7697804507436663949, guid: c325c0dbc4144494ea155d587229240d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7697804507436663949, guid: c325c0dbc4144494ea155d587229240d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -94,6 +106,10 @@ PrefabInstance:
     - target: {fileID: 7697804507436663950, guid: c325c0dbc4144494ea155d587229240d, type: 3}
       propertyPath: m_Name
       value: PrevPageButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 7697804508706743310, guid: c325c0dbc4144494ea155d587229240d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c325c0dbc4144494ea155d587229240d, type: 3}

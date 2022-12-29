@@ -1230,22 +1230,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: NextPageButton
       objectReference: {fileID: 0}
-    - target: {fileID: 5536081464711209614, guid: 7f7c50f0ac6edea4ea630f97ac4023c9, type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5536081464711209614, guid: 7f7c50f0ac6edea4ea630f97ac4023c9, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300066, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
-    - target: {fileID: 5536081465592775171, guid: 7f7c50f0ac6edea4ea630f97ac4023c9, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9094273232369668556, guid: 7f7c50f0ac6edea4ea630f97ac4023c9, type: 3}
-      propertyPath: _gameEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: 3cc8f5baef179344c9f33124339e0b91, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f7c50f0ac6edea4ea630f97ac4023c9, type: 3}
 --- !u!114 &5181539894138374892 stripped
@@ -1884,10 +1868,6 @@ PrefabInstance:
       value: 118.01524
       objectReference: {fileID: 0}
     - target: {fileID: 5536081464711209600, guid: 0e4c91f304d0c284da78ebc8efe6c70c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5536081464711209600, guid: 0e4c91f304d0c284da78ebc8efe6c70c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1939,22 +1919,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PrevPageButton
       objectReference: {fileID: 0}
-    - target: {fileID: 5536081464711209614, guid: 0e4c91f304d0c284da78ebc8efe6c70c, type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5536081464711209614, guid: 0e4c91f304d0c284da78ebc8efe6c70c, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300066, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
-    - target: {fileID: 5536081465592775171, guid: 0e4c91f304d0c284da78ebc8efe6c70c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9094273232369668556, guid: 0e4c91f304d0c284da78ebc8efe6c70c, type: 3}
-      propertyPath: _gameEvent
-      value: 
-      objectReference: {fileID: 11400000, guid: a3e229c8820464a44b8fb7f9a2f408ed, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e4c91f304d0c284da78ebc8efe6c70c, type: 3}
 --- !u!224 &971878473026413030 stripped

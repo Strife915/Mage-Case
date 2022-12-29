@@ -65,6 +65,7 @@ namespace MageCase.GamePlay
         public void ChangeGamePlayToOnHoldState()
         {
             _statemachine.ChangeState(_gameplayOnHoldState);
+            _score.ResetScore();
         }
 
         void StartShowResultRoutine()

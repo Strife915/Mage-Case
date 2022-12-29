@@ -20,5 +20,10 @@ namespace MageCase.GamePlay
             Score = Mathf.Max(Score, 0);
             foreach (var text in _scoreText) text.text = "SCORE : " + Score.ToString();
         }
+
+        public void ResetScore()
+        {
+            UpdateScoreText(0);
+        }
     }
 }
