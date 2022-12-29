@@ -1,4 +1,7 @@
-﻿using Magecase.DataEntities;
+﻿using DG.Tweening;
+using Magecase.Abstract.Ui.Behaviours;
+using Magecase.DataEntities;
+using MageCase.Scriptableobjects;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,7 +12,9 @@ namespace Magecase.Uis
     {
         [SerializeField] TMP_Text _answerText;
         [SerializeField] bool _isCorrectAnswer;
+        [SerializeField] ShakeAttributesSo _shakeAttributesSo;
         Image _buttonImage;
+        IShakeBehaviour _shakeBehaviour;
 
         public bool IsCorrectAnswer => _isCorrectAnswer;
 
@@ -19,7 +24,10 @@ namespace Magecase.Uis
             if (_isCorrectAnswer)
                 _buttonImage.color = Color.green;
             else
+            {
                 _buttonImage.color = Color.red;
+                _shakeBehaviour.Shake();
+            }
         }
 
         protected override void OnValidate()
@@ -31,6 +39,7 @@ namespace Magecase.Uis
         protected override void Awake()
         {
             base.Awake();
+            _shakeBehaviour = new ShakeBehaviour(transform, _shakeAttributesSo);
             GetReference();
         }
 

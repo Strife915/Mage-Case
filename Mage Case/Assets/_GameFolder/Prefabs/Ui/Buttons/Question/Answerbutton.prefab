@@ -278,6 +278,7 @@ MonoBehaviour:
   _gameEvent: {fileID: 11400000, guid: 7929925ce40eb4f41a0601b28ff18d2b, type: 2}
   _answerText: {fileID: 8313391254514632406}
   _isCorrectAnswer: 0
+  _shakeAttributesSo: {fileID: 11400000, guid: e8811381af13441b7a0e3994318cb3b4, type: 2}
 --- !u!114 &-1087496681901774321
 MonoBehaviour:
   m_ObjectHideFlags: 0
