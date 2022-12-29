@@ -1,10 +1,10 @@
-﻿using Magecase.Abstract.Uis;
+﻿using MageCase.Abstract.Uis;
 using MageCase.Scriptableobjects;
-using Magecase.ScriptableObjects.GameEventListeners;
+using MageCase.ScriptableObjects.GameEventListeners;
 using TMPro;
 using UnityEngine;
 
-namespace Magecase.Uis
+namespace MageCase.Uis
 {
     public class ResultCanvas : BaseCanvasGroup
     {

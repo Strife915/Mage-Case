@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Magecase.DataEntities;
+using MageCase.DataEntities;
 
-namespace Magecase.Backend
+namespace MageCase.Backend
 {
     public interface IQuestionApiCall
     {

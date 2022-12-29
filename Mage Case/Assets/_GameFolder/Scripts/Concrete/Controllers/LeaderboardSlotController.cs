@@ -1,8 +1,8 @@
-﻿using Magecase.DataEntities;
+﻿using MageCase.DataEntities;
 using UnityEngine;
 using TMPro;
 
-namespace Magecase.Uis
+namespace MageCase.Uis
 {
     public class LeaderboardSlotController : MonoBehaviour
     {

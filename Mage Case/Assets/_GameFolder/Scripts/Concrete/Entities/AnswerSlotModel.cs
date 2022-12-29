@@ -1,4 +1,4 @@
-﻿namespace Magecase.DataEntities
+﻿namespace MageCase.DataEntities
 {
     public struct AnswerSlotModel
     {

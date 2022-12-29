@@ -1,7 +1,7 @@
-using System;
+using MageCase.Abstract.Uis;
 using UnityEngine;
 
-namespace Magecase.Uis
+namespace MageCase.Uis
 {
     public class StartGameButton : ButtonWithGameEvent
     {

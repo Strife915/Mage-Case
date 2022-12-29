@@ -1,6 +1,6 @@
-using Magecase.DataEntities;
+using MageCase.DataEntities;
 
-namespace Magecase.Abstract.Backend
+namespace MageCase.Abstract.Backend
 {
     public interface ILeaderboardApiCall
     {

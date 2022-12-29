@@ -1,9 +1,8 @@
 using System.Collections;
 using MageCase.GamePlay.States;
-using Magecase.ScriptableObjects;
-using MageCase.Scriptableobjects;
-using Magecase.ScriptableObjects.GameEventListeners;
-using Magecase.Uis;
+using MageCase.ScriptableObjects;
+using MageCase.ScriptableObjects.GameEventListeners;
+using MageCase.Uis;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;

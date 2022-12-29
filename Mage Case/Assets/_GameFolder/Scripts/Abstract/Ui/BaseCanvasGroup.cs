@@ -1,8 +1,8 @@
-using Magecase.Abstract.Ui.Behaviours;
-using Magecase.Uis.Behaviours;
+using MageCase.Abstract.Ui.Behaviours;
+using MageCase.Ui.Behaviours;
 using UnityEngine;
 
-namespace Magecase.Abstract.Uis
+namespace MageCase.Abstract.Uis
 {
     public abstract class BaseCanvasGroup : MonoBehaviour
     {

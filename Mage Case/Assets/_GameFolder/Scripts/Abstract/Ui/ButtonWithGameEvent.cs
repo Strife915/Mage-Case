@@ -1,8 +1,7 @@
-using Magecase.Abstract.Uis;
-using Magecase.ScriptableObjects;
+using MageCase.ScriptableObjects;
 using UnityEngine;
 
-namespace Magecase.Uis
+namespace MageCase.Abstract.Uis
 {
     public abstract class ButtonWithGameEvent : BaseButton
     {

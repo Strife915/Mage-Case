@@ -1,11 +1,13 @@
-﻿using Magecase.Abstract.Ui.Behaviours;
-using Magecase.DataEntities;
+﻿using MageCase.Abstract.Ui.Behaviours;
+using MageCase.Abstract.Uis;
+using MageCase.DataEntities;
 using MageCase.Scriptableobjects;
+using MageCase.Ui.Behaviours;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Magecase.Uis
+namespace MageCase.Uis
 {
     public class AnswerButton : ButtonWithGameEvent
     {

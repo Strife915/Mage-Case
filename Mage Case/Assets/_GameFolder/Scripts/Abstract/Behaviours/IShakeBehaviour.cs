@@ -1,6 +1,6 @@
 using MageCase.Abstract.Behaviours;
 
-namespace Magecase.Abstract.Ui.Behaviours
+namespace MageCase.Abstract.Ui.Behaviours
 {
     public interface IShakeBehaviour
     {

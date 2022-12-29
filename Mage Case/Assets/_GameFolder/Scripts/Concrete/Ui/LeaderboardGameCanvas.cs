@@ -1,6 +1,6 @@
-using Magecase.Abstract.Uis;
+using MageCase.Abstract.Uis;
 
-namespace Magecase.Uis
+namespace MageCase.Uis
 {
     public class LeaderboardGameCanvas : BaseCanvasGroup
     {

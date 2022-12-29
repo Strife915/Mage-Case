@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.Networking;
 
-namespace Magecase.Abstract.Backend
+namespace MageCase.Abstract.Backend
 {
     public abstract class BasseApiCallClass
     {

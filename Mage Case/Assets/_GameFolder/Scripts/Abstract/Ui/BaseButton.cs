@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Magecase.Abstract.Uis
+namespace MageCase.Abstract.Uis
 {
     public abstract class BaseButton : MonoBehaviour
     {

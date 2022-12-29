@@ -1,8 +1,8 @@
-using Magecase.Abstracts.GameEventListeners;
+using MageCase.Abstracts.GameEventListeners;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Magecase.ScriptableObjects.GameEventListeners
+namespace MageCase.ScriptableObjects.GameEventListeners
 {
     public class UnityGameEventListener : BaseGameEventListener
     {

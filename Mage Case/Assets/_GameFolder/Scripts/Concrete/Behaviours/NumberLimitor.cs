@@ -1,7 +1,7 @@
-﻿using Magecase.Abstract.Behaviours;
+﻿using MageCase.Abstract.Behaviours;
 using UnityEngine;
 
-namespace Magecase.Uis
+namespace MageCase.Uis
 {
     public class NumberLimitor : INumberLimitor
     {

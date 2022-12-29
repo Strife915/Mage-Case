@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Magecase.Backend;
-using Magecase.DataEntities;
+using MageCase.Backend;
+using MageCase.DataEntities;
 using MageCase.Scriptableobjects;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace Magecase.Uis
+namespace MageCase.Uis
 {
     public class QuestionManager : MonoBehaviour
     {

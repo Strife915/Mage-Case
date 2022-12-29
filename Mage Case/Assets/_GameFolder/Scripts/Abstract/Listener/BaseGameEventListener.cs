@@ -1,7 +1,7 @@
-using Magecase.ScriptableObjects;
+using MageCase.ScriptableObjects;
 using UnityEngine;
 
-namespace Magecase.Abstracts.GameEventListeners
+namespace MageCase.Abstracts.GameEventListeners
 {
     public abstract class BaseGameEventListener : MonoBehaviour
     {

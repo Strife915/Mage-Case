@@ -1,8 +1,8 @@
-﻿using Magecase.Abstract.Backend;
-using Magecase.DataEntities;
+﻿using MageCase.Abstract.Backend;
+using MageCase.DataEntities;
 using MageCase.Scriptableobjects;
 
-namespace Magecase.Backend
+namespace MageCase.Backend
 {
     public class LeaderboardApiCall : BasseApiCallClass, ILeaderboardApiCall
     {

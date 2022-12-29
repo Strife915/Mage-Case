@@ -1,6 +1,6 @@
-using UnityEngine;
+using MageCase.Abstract.Uis;
 
-namespace Magecase.Uis
+namespace MageCase.Uis
 {
     public class CloseLeaderBoardButton : ButtonWithGameEvent
     {

@@ -1,4 +1,4 @@
-﻿namespace Magecase.Abstract.Behaviours
+﻿namespace MageCase.Abstract.Behaviours
 {
     public interface INumberLimitor
     {

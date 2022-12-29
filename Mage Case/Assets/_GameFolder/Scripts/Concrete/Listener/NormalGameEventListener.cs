@@ -1,6 +1,6 @@
-using Magecase.Abstracts.GameEventListeners;
+using MageCase.Abstracts.GameEventListeners;
 
-namespace Magecase.ScriptableObjects.GameEventListeners
+namespace MageCase.ScriptableObjects.GameEventListeners
 {
     public class NormalGameEventListener : BaseGameEventListener
     {

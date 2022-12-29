@@ -1,7 +1,7 @@
 using System.Linq;
 using DG.DemiEditor;
 
-namespace Magecase.Uis
+namespace MageCase.Uis
 {
     public class RevealTwoWrongAnswerPowerUp : IPowerupAbility
     {

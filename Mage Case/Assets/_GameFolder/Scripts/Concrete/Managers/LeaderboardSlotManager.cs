@@ -1,13 +1,13 @@
-using Magecase.Abstract.Backend;
-using Magecase.Abstract.Behaviours;
-using Magecase.Backend;
+using MageCase.Abstract.Backend;
+using MageCase.Abstract.Behaviours;
+using MageCase.Backend;
 using MageCase.Scriptableobjects;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-namespace Magecase.Uis
+namespace MageCase.Uis
 {
     public class LeaderboardSlotManager : MonoBehaviour
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace Magecase.Uis
+namespace MageCase.Uis
 {
     public class ExtraTimePowerUp : IPowerAbilityWithEvent
     {

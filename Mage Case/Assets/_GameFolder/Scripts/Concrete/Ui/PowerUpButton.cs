@@ -1,6 +1,6 @@
-using System.Collections.Generic;
+using MageCase.Abstract.Uis;
 
-namespace Magecase.Uis
+namespace MageCase.Uis
 {
     public class PowerUpButton : ButtonWithGameEvent
     {

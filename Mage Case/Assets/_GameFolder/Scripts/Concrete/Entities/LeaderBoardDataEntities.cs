@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Magecase.DataEntities
+namespace MageCase.DataEntities
 {
     public struct LeaderBoardDataEntities
     {

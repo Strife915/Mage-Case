@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using Magecase.Abstracts.GameEventListeners;
+using MageCase.Abstracts.GameEventListeners;
 using UnityEngine;
 
-namespace Magecase.ScriptableObjects
+namespace MageCase.ScriptableObjects
 {
     [CreateAssetMenu(fileName = "New Game Event", menuName = "Mage Case/Events/Game Event")]
     public class GameEvent : ScriptableObject

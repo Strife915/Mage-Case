@@ -1,6 +1,6 @@
-﻿using Magecase.ScriptableObjects;
-using MageCase.Scriptableobjects;
+﻿using MageCase.ScriptableObjects;
 using Magecase.Uis;
+using MageCase.Uis;
 using TMPro;
 using UnityEngine;
 

@@ -1,7 +1,7 @@
-using Magecase.Abstract.Ui.Behaviours;
+using MageCase.Abstract.Ui.Behaviours;
 using UnityEngine;
 
-namespace Magecase.Uis.Behaviours
+namespace MageCase.Ui.Behaviours
 {
     public class CanvasGroupOpenBehaviour : ICanvasGroupOpenBehaviour
     {

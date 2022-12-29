@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Magecase.Abstract.Backend;
-using Magecase.DataEntities;
+using MageCase.Abstract.Backend;
+using MageCase.DataEntities;
 using MageCase.Scriptableobjects;
 
-namespace Magecase.Backend
+namespace MageCase.Backend
 {
     public class QuestionApiCall : BasseApiCallClass, IQuestionApiCall
     {

@@ -1,9 +1,10 @@
-﻿using Magecase.ScriptableObjects;
-using Magecase.ScriptableObjects.GameEventListeners;
+﻿using MageCase.Abstract.Uis;
+using MageCase.ScriptableObjects;
+using MageCase.ScriptableObjects.GameEventListeners;
 using TMPro;
 using UnityEngine;
 
-namespace Magecase.Uis
+namespace MageCase.Uis
 {
     public class ResultCanvasButton : ButtonWithGameEvent
     {

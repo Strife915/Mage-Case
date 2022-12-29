@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace MageCase.Scriptableobjects
+namespace MageCase.ScriptableObjects
 {
     [CreateAssetMenu(menuName = "Mage Case/Attributes/Question", fileName = "Question Attributes")]
     public class QuestionAttributesSo : ScriptableObject

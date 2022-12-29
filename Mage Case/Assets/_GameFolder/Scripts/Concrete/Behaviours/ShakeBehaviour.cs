@@ -1,9 +1,10 @@
 using DG.Tweening;
 using MageCase.Abstract.Behaviours;
+using MageCase.Abstract.Ui.Behaviours;
 using MageCase.Scriptableobjects;
 using UnityEngine;
 
-namespace Magecase.Abstract.Ui.Behaviours
+namespace MageCase.Ui.Behaviours
 {
     public class ShakeBehaviour : IShakeBehaviour
     {
